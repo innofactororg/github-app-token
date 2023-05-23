@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/innofactororg/gha-token.git"
+    "url": "git+https://github.com/innofactororg/github-action-get-app-token.git"
   },
   "keywords": [
     "github",
@@ -25,9 +25,9 @@
   "author": "Innofactor Plc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/innofactororg/gha-token/issues"
+    "url": "https://github.com/innofactororg/github-action-get-app-token/issues"
   },
-  "homepage": "https://github.com/innofactororg/gha-token#readme",
+  "homepage": "https://github.com/innofactororg/github-action-get-app-token#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",

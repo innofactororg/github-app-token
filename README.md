@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Generate token
       id: generate_token
-      uses: innofactororg/gha-token@v1
+      uses: innofactororg/github-action-get-app-token@v1
       with:
         app_id: ${{ secrets.APP_ID }}
         private_key: ${{ secrets.PRIVATE_KEY }}
