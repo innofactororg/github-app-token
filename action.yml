@@ -1,0 +1,31 @@
+name: GitHub Token
+author: Innofactor Plc
+description: Get a GitHub App Installation Token to impersonate a GitHub App.
+inputs:
+  app_id:
+    description: GitHub App ID.
+    required: true
+  installation_id:
+    description: GitHub App installation ID for which the token will be requested (defaults to the ID of the repository's installation).
+  github_api_url:
+    description: The GitHub API URL.
+    default: ${{ github.api_url }}
+  permissions:
+    description: The JSON-stringified permissions granted to the token (defaults to all the permissions given to the GitHub App).
+  private_key:
+    description: Private key of the GitHub App (can be Base64 encoded).
+    required: true
+  repository:
+    description: The full name of the repository for which the token will be requested.
+    default: ${{ github.repository }}
+  repositories:
+    description: The JSON-stringified repositories granted to the token (defaults to all the repositories that the GitHub App has access to).
+outputs:
+  token:
+    description: An installation token for the GitHub App on the requested repository.
+runs:
+  using: node16
+  main: dist/index.js
+branding:
+  icon: unlock
+  color: gray-dark
