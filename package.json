@@ -1,5 +1,5 @@
 {
-  "name": "gha-token",
+  "name": "github-action-get-app-token",
   "version": "1.0.0",
   "description": "Get a GitHub App Installation Token to impersonate a GitHub App",
   "main": "lib/main.js",
