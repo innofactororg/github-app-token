@@ -1,0 +1,28 @@
+{
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20-bookworm",
+  "onCreateCommand": ".devcontainer/setup.sh",
+  "postCreateCommand": "npm install",
+  "postStartCommand": ".devcontainer/startup.sh",
+  "overrideCommand": true,
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/starship:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "security.workspace.trust.untrustedFiles": "open"
+      },
+      "extensions": [
+        "bierner.markdown-preview-github-styles",
+        "catppuccin.catppuccin-vsc",
+        "catppuccin.catppuccin-vsc-icons",
+        "dbaeumer.vscode-eslint",
+        "DavidAnson.vscode-markdownlint",
+        "GitHub.vscode-pull-request-github",
+        "streetsidesoftware.code-spell-checker",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}
