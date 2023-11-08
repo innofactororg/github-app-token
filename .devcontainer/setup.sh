@@ -15,7 +15,7 @@ fi
 
 sudo apt-get update
 sudo apt-get install --no-install-recommends -y pre-commit fonts-firacode shellcheck
-sudo npm install -g npm
+sudo npm install -g npm prettier
 
 if [ -f ~/.gitconfig ]; then
   rm ~/.gitconfig
