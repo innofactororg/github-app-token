@@ -11,9 +11,8 @@
  * https://github.com/tibdex/github-app-token/blob/main/src/index.ts
  */
 import {Buffer} from 'node:buffer'
-
-import {getInput, setFailed} from '@actions/core'
-import ensureError from 'ensure-error'
+import {getInput} from '@actions/core'
+import {processError} from './error-tools'
 import isBase64 from 'is-base64'
 
 import {setInstallationToken} from './installation-token'
@@ -58,9 +57,8 @@ async function run(): Promise<void> {
       repo,
       repositories
     })
-  } catch (_error: unknown) {
-    const error = ensureError(_error)
-    setFailed(error)
+  } catch (error: unknown) {
+    throw new Error(processError(error, true))
   }
 }
 void run()

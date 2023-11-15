@@ -11,7 +11,8 @@
  * https://github.com/tibdex/github-app-token/blob/main/src/fetch-installation-token.ts
  */
 import {info, setOutput, setSecret} from '@actions/core'
-import {getOctokit} from '@actions/github'
+import {Octokit} from '@octokit/rest'
+import fetch from 'node-fetch'
 import {createAppAuth} from '@octokit/auth-app'
 import {request} from '@octokit/request'
 
@@ -43,7 +44,13 @@ export const setInstallationToken = async ({
   })
 
   const authApp = await app({type: 'app'})
-  const octokit = getOctokit(authApp.token)
+  const octokit = new Octokit({
+    auth: `token ${authApp.token || process.env.GITHUB_TOKEN}`,
+    baseUrl: 'https://api.github.com',
+    request: {
+      fetch
+    }
+  })
   let repos: string[] = []
   let token: string
 
